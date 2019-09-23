@@ -7,7 +7,7 @@ module.exports = {
   },
   outlook: {
     clientID: 'd3860e23-f14c-448b-95b0-e685e372b0be',
-    clientSecret: '8Yls-G61n0FS/@yC@/qNWrN3A+]M5u55'
+    clientSecret: 'wHc4Dq6uyJmYjr5V2E[VHWL/WBKOiq@]'
   },
   session: {
     cookieKey: 'xxxxxxxxxxxx'
