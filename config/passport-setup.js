@@ -18,7 +18,7 @@ passport.deserializeUser((id, done) => {
 //Google strategy
 passport.use(
   new GoogleStrategy({
-    callbackURL: '/auth/google/redirect',
+    callbackURL: 'https://sensin.azurewebsites.net/auth/google/redirect',
     clientID: keys.google.clientID,
     clientSecret: keys.google.clientSecret
   }, (accessToken, refreshToken, profile, done) => {
