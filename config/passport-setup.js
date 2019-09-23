@@ -36,7 +36,7 @@ passport.use(
 //Outlook strategy
 passport.use(
   new OutlookStrategy({
-    callbackURL: '/auth/outlook/redirect',
+    callbackURL: 'https://sensin.azurewebsites.net/auth/outlook/redirect',
     clientID: keys.outlook.clientID,
     clientSecret: keys.outlook.clientSecret
   }, (accessToken, refreshToken, profile, done) => {
