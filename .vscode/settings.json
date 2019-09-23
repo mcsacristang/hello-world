@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.deploySubpath": "",
+    "appService.defaultWebAppToDeploy": "/subscriptions/7a19e293-b9b2-471d-ae4a-c47013aecbfe/resourceGroups/nextonia/providers/Microsoft.Web/sites/sensin"
+}

@@ -1,0 +1,489 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Nextonia - ALPCAM01</title>
+  <meta name="description" content="Ela Admin - HTML5 Admin Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="/images/nxtIcon.png">
+  <link rel="shortcut icon" href="/images/nxtIcon.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+  <link rel="stylesheet" href="css/cs-skin-elastic.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+  <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+     crossorigin=""></script>
+
+  <style>
+    .peopleChart {
+        min-height: 335px;
+    }
+    #flotPie1  {
+        height: 150px;
+    }
+    #flotPie1 td {
+        padding:3px;
+    }
+    #flotPie1 table {
+        top: 20px!important;
+        right: 0px!important;
+    }
+
+    #mapid { height: 250px; }
+
+    .bar1{
+      background-color:#66bb6a;
+    }
+
+    .bar2{
+      background-color:#ef5350;
+    }
+
+    .loader {
+      border: 10px solid #cccccc;
+      border-radius: 50%;
+      border-top: 10px solid #3498db;
+      width: 25px;
+      height: 25px;
+      -webkit-animation: spin 1s linear infinite; /* Safari */
+      animation: spin 1s linear infinite;
+      float: right;
+    }
+
+    #iconError{
+      float: right;
+      visibility: hidden;
+      color:#CCAA00;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+
+  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+</head>
+<body>
+  <!-- Left Panel -->
+
+  <aside id="left-panel" class="left-panel">
+      <% include partials/menu %>
+  </aside><!-- /#left-panel -->
+
+  <!-- Left Panel -->
+
+  <!-- Right Panel -->
+
+  <div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <% include partials/header %>
+    <!-- /header -->
+
+    <div class="breadcrumbs">
+      <div class="breadcrumbs-inner">
+        <div class="row m-0">
+          <div class="col-sm-4">
+            <div class="page-header float-left">
+              <div class="page-title">
+                <h1>Dashboard</h1>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <div class="page-header float-right">
+              <div class="page-title">
+                <ol class="breadcrumb text-right">
+                  <li><a href="#">Dashboard</a></li>
+                  <li><a href="#">AI Cameras</a></li>
+                  <li class="active">ALPSTASELL2</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="animated fadeIn">
+
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="card">
+              <div class="card-header">
+                <strong class="card-title">Device info</strong>
+                <div id="loader" class="loader"></div>
+                <div id="iconError" class="iconError"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
+              </div>
+              <div class="card-body">
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Company</th>
+                      <td><span id="devInfoCompany"></span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Name</th>
+                      <td><span id="devInfoName"></span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">MAC</th>
+                      <td><span id="devInfoMAC"></span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Type</th>
+                      <td><span id="devInfoType"></span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Orientarion</th>
+                      <td><span id="devInfoOrientation"></span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer">
+                <small>Last seen: 1 hour ago</small>
+                </tr>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="card">
+              <div class="card-header">
+                <strong>Device location</strong>
+              </div>
+              <div class="card-body">
+                <div id="mapid"></div>
+              </div>
+              <div class="card-footer">
+                <small>Location: <span id="devInfoZone"></span></small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-12">
+              <div class="card">
+                  <div class="card-body">
+                      <h4 class="box-title">Visitors - Last 24 hours</h4>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-8">
+                          <div class="card-body">
+                              <!-- <canvas id="TrafficChart"></canvas>   -->
+                              <div id="peopleChart" class="peopleChart"></div>
+                          </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="card-header">
+                          Visitors
+                        </div>
+                          <div class="card-body">
+                              <div class="progress-box progress-1">
+                                  <h4 class="por-title">Men</h4>
+                                  <div class="por-txt">240 (24%)</div>
+                                  <div class="progress mb-2" style="height: 5px;">
+                                      <div class="progress-bar bar1" role="progressbar" style="width: 24%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                              </div>
+                              <div class="progress-box progress-2">
+                                  <h4 class="por-title">Women</h4>
+                                  <div class="por-txt">760 (76%)</div>
+                                  <div class="progress mb-2" style="height: 5px;">
+                                      <div class="progress-bar bar2" role="progressbar" style="width: 76%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                              </div>
+                          </div> <!-- /.card-body -->
+                      </div>
+                  </div> <!-- /.row -->
+                  <div class="card-body"></div>
+              </div>
+          </div>
+
+        </div>
+
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <strong class="card-title">Command console</strong>
+              </div>
+              <div class="card-body">
+
+                <!-- form -->
+                  <div class="form-group text-center">
+                    <pre id="consolaCmd" style="padding: 20px; min-height:300px; max-height:300px; overflow: auto; text-align: left; width:100%; background-color:lightgray;"></pre>
+                  </div>
+                  <div class="form-group">
+                    <label for="cc-payment" class="control-label mb-1">Command</label>
+                    <input id="cmdField" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false" placeholder="">
+                  </div>
+                  <div class="row form-group">
+                    <div class="col col-md-3"><label class=" form-control-label">Time</label></div>
+                    <div class="col col-md-9">
+                      <div class="form-check">
+                        <div class="radio">
+                          <label for="radio1" class="form-check-label ">
+                            <input type="radio" id="radio1" name="radios" value="option1" class="form-check-input" checked>Now
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label for="radio2" class="form-check-label ">
+                            <input type="radio" id="radio2" name="radios" value="option2" class="form-check-input">In 1 hour
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label for="radio3" class="form-check-label ">
+                            <input type="radio" id="radio3" name="radios" value="option2" class="form-check-input">At midnight
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label for="radio4" class="form-check-label ">
+                            <input type="radio" id="radio4" name="radios" value="option2" class="form-check-input">Every minute
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label for="radio5" class="form-check-label ">
+                            <input type="radio" id="radio5" name="radios" value="option2" class="form-check-input">Every hour
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label for="radio6" class="form-check-label ">
+                            <input type="radio" id="radio6" name="radios" value="option2" class="form-check-input">Every day
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <button onClick="addCommand();" class="btn btn-lg btn-primary btn-block">
+                      <i class="fa fa-terminal fa-lg"></i>&nbsp;
+                      <span id="payment-button-amount">Execute</span>
+                      <span id="payment-button-sending" style="display:none;">Enviando...</span>
+                    </button>
+                    <button onClick="clearConsole();" class="btn btn-lg btn-secondary btn-block">
+                      <i class="fa fa-eraser fa-lg"></i>&nbsp;
+                      <span id="payment-button-amount">Clear</span>
+                    </button>
+                  </div>
+                <!-- /form -->
+              </div>
+            </div> <!-- .card -->
+
+          </div><!--/.col-->
+
+          <div class="col-lg-6">
+              <div class="card br-0">
+                <div class="card-header">
+                  <strong>Log</strong>
+                </div>
+                  <div class="card-body">
+
+                  </div>
+              </div><!-- /.card -->
+          </div>
+
+
+        </div>
+
+
+      </div><!-- .animated -->
+    </div><!-- .content -->
+
+    <div class="clearfix"></div>
+
+
+  </div><!-- /#right-panel -->
+
+  <!-- Right Panel -->
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
+
+  <!--Chartist Chart-->
+  <script src="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-legend@0.6.2/chartist-plugin-legend.min.js"></script>
+
+  <script src="js/main.js"></script>
+
+  <script>
+
+    var vid1Check = document.getElementById('vid1');
+    var vid2Check = document.getElementById('vid2');
+    var vid3Check = document.getElementById('vid3');
+
+    function checkAllVideo(elemento){
+      if(elemento.checked){
+        vid1Check.checked = true;
+        vid2Check.checked = true;
+        vid3Check.checked = true;
+      }else{
+        vid1Check.checked = false;
+        vid2Check.checked = false;
+        vid3Check.checked = false;
+      }
+    }
+
+    var cmdField = document.getElementById('cmdField');
+    var consola = document.getElementById('consolaCmd');
+
+    function addCommand(){
+      consola.innerHTML += "root@alpstasell2:# " + cmdField.value + "\n";
+      cmdField.value = "";
+      var pre = jQuery("#consolaCmd");
+      pre.scrollTop( pre.prop("scrollHeight") );
+    }
+
+    function clearConsole(){
+      consola.innerHTML = "";
+    }
+
+    jQuery(document).ready(function($) {
+        "use strict";
+
+      // Traffic Chart using chartist
+      if ($('#peopleChart').length) {
+          var chart = new Chartist.Line('#peopleChart', {
+            labels: ['00', '02', '04', '06', '08', '10', '12', '14', '16', '18', '20', '22'],
+            series: [
+            [0, 0, 0, 10, 25, 60, 73, 42, 56, 36, 0, 0],
+            [0, 0, 0, 5, 15, 53, 37, 64, 26, 10, 0, 0]
+            ]
+        }, {
+            low: 0,
+            showArea: true,
+            showLine: false,
+            showPoint: false,
+            fullWidth: true,
+            axisX: {
+              showGrid: true
+          }
+      });
+
+          chart.on('draw', function(data) {
+              if(data.type === 'line' || data.type === 'area') {
+                  data.element.animate({
+                      d: {
+                          begin: 2000 * data.index,
+                          dur: 2000,
+                          from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                          to: data.path.clone().stringify(),
+                          easing: Chartist.Svg.Easing.easeOutQuint
+                      }
+                  });
+              }
+          });
+      }
+      // Traffic Chart using chartist End
+
+    });
+
+  </script>
+
+  <script src="js/azure-storage.table.js"></script>
+  <script>
+    var devInfoCompany = document.getElementById('devInfoCompany');
+    var devInfoName = document.getElementById('devInfoName');
+    var devInfoMAC = document.getElementById('devInfoMAC');
+    var devInfoOrientation = document.getElementById('devInfoOrientation');
+    var devInfoType = document.getElementById('devInfoType');
+    var devInfoZone = document.getElementById('devInfoZone');
+
+    var loadaer = document.getElementById('loader');
+    var iconError = document.getElementById('iconError');
+
+
+    var tableUri = 'https://sensin.table.core.windows.net';
+    var tableService = AzureStorage.Table.createTableServiceWithSas(tableUri, '?sv=2018-03-28&ss=bfqt&srt=sco&sp=r&se=2020-01-01T23:57:34Z&st=2019-09-09T15:57:34Z&spr=https&sig=QK38pWW%2FDhQwTNntJyLO9NMvn9HjPLSI%2BcDC2H8Xb4A%3D');
+
+    var tableQuery = new AzureStorage.Table.TableQuery().top(200);
+
+    tableService.queryEntities('deviceinfo', tableQuery, null, function(error, result) {
+        var deviceInfoQuery;
+        if (error) {
+          errorDeviceInfo();
+        } else {
+            for (var i = 0, entity; entity = result.entries[i]; i++) {
+              if(entity.RowKey['_'] == "alpstasell2"){
+                deviceInfoQuery = entity;
+                printDeviceInfo(deviceInfoQuery);
+              }
+            }
+        }
+    });
+
+    function printDeviceInfo(device){
+      devInfoCompany.innerHTML = device.PartitionKey['_'];
+      devInfoName.innerHTML = device.RowKey['_'];
+      devInfoOrientation.innerHTML = device.pScreen['_'];
+      devInfoType.innerHTML = device.type['_'];
+      devInfoMAC.innerHTML = device.mac['_'];
+      devInfoZone.innerHTML = device.zone['_'];
+      loader.style.visibility = "hidden";
+    }
+
+    function errorDeviceInfo(){
+      iconError.style.visibility = "visible";
+      loader.style.visibility = "hidden";
+      loader.style.width = "0px";
+    }
+
+    </script>
+
+  <script>
+    var mymap = L.map('mapid').setView([4.718389, -74.048505], 16);
+    var marker = L.marker([4.718389, -74.048505]).addTo(mymap);
+    marker.bindPopup("<b>alpstasell2</b>").openPopup();
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+  </script>
+
+</body>
+</html>

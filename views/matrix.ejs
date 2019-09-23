@@ -1,0 +1,423 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Nextonia - ALPMTRX01</title>
+  <meta name="description" content="Ela Admin - HTML5 Admin Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="/images/nxtIcon.png">
+  <link rel="shortcut icon" href="/images/nxtIcon.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+  <link rel="stylesheet" href="css/cs-skin-elastic.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+  <style>
+    #flotPie1  {
+        height: 150px;
+    }
+    #flotPie1 td {
+        padding:3px;
+    }
+    #flotPie1 table {
+        top: 20px!important;
+        right: 0px!important;
+    }
+  </style>
+
+  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+</head>
+<body>
+  <!-- Left Panel -->
+
+  <aside id="left-panel" class="left-panel">
+      <% include partials/menu %>
+  </aside><!-- /#left-panel -->
+
+  <!-- Left Panel -->
+
+  <!-- Right Panel -->
+
+  <div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <% include partials/header %>
+    <!-- /header -->
+
+    <div class="breadcrumbs">
+      <div class="breadcrumbs-inner">
+        <div class="row m-0">
+          <div class="col-sm-4">
+            <div class="page-header float-left">
+              <div class="page-title">
+                <h1>Dashboard</h1>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <div class="page-header float-right">
+              <div class="page-title">
+                <ol class="breadcrumb text-right">
+                  <li><a href="#">Dashboard</a></li>
+                  <li><a href="#">Matrix</a></li>
+                  <li class="active">ALPMTRX01</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="animated fadeIn">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-1">
+                                <i class="fa fa-camera"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><span class="count">2</span></div>
+                                    <div class="stat-heading">Cámaras IA</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-2">
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><span class="count">2</span></div>
+                                    <div class="stat-heading">Calificadores</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-3">
+                                <i class="fa fa-desktop"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><span class="count">1</span></div>
+                                    <div class="stat-heading">SonIAs</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-4">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><span class="count">2</span></div>
+                                    <div class="stat-heading">Plays</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <strong class="card-title">Consola de comandos</strong>
+              </div>
+              <div class="card-body">
+
+                <!-- form -->
+                  <div class="form-group text-center">
+                    <pre id="consolaCmd" style="padding: 20px; min-height:300px; max-height:300px; overflow: auto; text-align: left; width:100%; background-color:lightgray;"></pre>
+                  </div>
+                  <div class="form-group">
+                    <label for="cc-payment" class="control-label mb-1">Comando</label>
+                    <input id="cmdField" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false" placeholder="">
+                  </div>
+                  <div class="row form-group">
+                    <div class="col col-md-3"><label class=" form-control-label">Tiempo</label></div>
+                    <div class="col col-md-9">
+                      <div class="form-check">
+                        <div class="radio">
+                          <label for="radio1" class="form-check-label ">
+                            <input type="radio" id="radio1" name="radios" value="option1" class="form-check-input" checked>Ahora
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label for="radio2" class="form-check-label ">
+                            <input type="radio" id="radio2" name="radios" value="option2" class="form-check-input">En 1 hora
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label for="radio3" class="form-check-label ">
+                            <input type="radio" id="radio3" name="radios" value="option2" class="form-check-input">A media noche
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label for="radio4" class="form-check-label ">
+                            <input type="radio" id="radio4" name="radios" value="option2" class="form-check-input">Cada minuto
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label for="radio5" class="form-check-label ">
+                            <input type="radio" id="radio5" name="radios" value="option2" class="form-check-input">Cada hora
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label for="radio6" class="form-check-label ">
+                            <input type="radio" id="radio6" name="radios" value="option2" class="form-check-input">A diario
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <button onClick="addCommand();" class="btn btn-lg btn-primary btn-block">
+                      <i class="fa fa-terminal fa-lg"></i>&nbsp;
+                      <span id="payment-button-amount">Ejecutar comando</span>
+                      <span id="payment-button-sending" style="display:none;">Enviando...</span>
+                    </button>
+                    <button onClick="clearConsole();" class="btn btn-lg btn-secondary btn-block">
+                      <i class="fa fa-eraser fa-lg"></i>&nbsp;
+                      <span id="payment-button-amount">Limpiar consola</span>
+                    </button>
+                  </div>
+                <!-- /form -->
+              </div>
+            </div> <!-- .card -->
+
+          </div><!--/.col-->
+
+          <div class="col-lg-6">
+              <div class="card br-0">
+                <div class="card-header">
+                  <strong>Últimas 24 horas</strong>
+                </div>
+                  <div class="card-body">
+                      <div class="chart-container ov-h">
+                          <div id="flotPie1" class="float-chart"></div>
+                      </div>
+                  </div>
+              </div><!-- /.card -->
+          </div>
+
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header">
+                <strong class="card-title">Dispositivos</strong>
+              </div>
+              <div class="card-body">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Dispositivo</th>
+                      <th scope="col">Tipo</th>
+                      <th scope="col">Visto por última vez</th>
+                      <th scope="col">Fecha de inclusión</th>
+                      <th scope="col">Ver log</th>
+                      <th scope="col">Reiniciar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">ALPCAM01</th>
+                      <td>Cámara IA</td>
+                      <td>Hace pocos segundos</td>
+                      <td>10/07/2019</td>
+                      <td><a href="#"><i class="fa fa-external-link"></i> Ver</a></td>
+                      <td><a href="#"><i class="fa fa-power-off"></i> Reiniciar</a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ALPCAM02</th>
+                      <td>Cámara IA</td>
+                      <td>Hace pocos segundos</td>
+                      <td>10/07/2019</td>
+                      <td><a href="#"><i class="fa fa-external-link"></i> Ver</a></td>
+                      <td><a href="#"><i class="fa fa-power-off"></i> Reiniciar</a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ALPCAL01</th>
+                      <td>Calificador</td>
+                      <td>Hace pocos segundos</td>
+                      <td>10/07/2019</td>
+                      <td><a href="#"><i class="fa fa-external-link"></i> Ver</a></td>
+                      <td><a href="#"><i class="fa fa-power-off"></i> Reiniciar</a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ALPCAL02</th>
+                      <td>Calificador</td>
+                      <td>Hace 2 minutos</td>
+                      <td>10/07/2019</td>
+                      <td><a href="#"><i class="fa fa-external-link"></i> Ver</a></td>
+                      <td><a href="#"><i class="fa fa-power-off"></i> Reiniciar</a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ALPSON01</th>
+                      <td>SonIA</td>
+                      <td>Hace 4 minutos</td>
+                      <td>10/07/2019</td>
+                      <td><a href="#"><i class="fa fa-external-link"></i> Ver</a></td>
+                      <td><a href="#"><i class="fa fa-power-off"></i> Reiniciar</a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ALPPDIG01</th>
+                      <td>Plays</td>
+                      <td>Hace 1 día</td>
+                      <td>10/07/2019</td>
+                      <td><a href="#"><i class="fa fa-external-link"></i> Ver</a></td>
+                      <td><a href="#"><i class="fa fa-power-off"></i> Reiniciar</a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ALPPDIG02</th>
+                      <td>Plays</td>
+                      <td>Hace 15 días</td>
+                      <td>10/07/2019</td>
+                      <td><a href="#"><i class="fa fa-external-link"></i> Ver</a></td>
+                      <td><a href="#"><i class="fa fa-power-off"></i> Reiniciar</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div><!-- .animated -->
+    </div><!-- .content -->
+
+    <div class="clearfix"></div>
+
+
+  </div><!-- /#right-panel -->
+
+  <!-- Right Panel -->
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
+
+  <script src="js/main.js"></script>
+
+  <script>
+
+  jQuery(document).ready(function($) {
+      "use strict";
+
+      // Pie chart flotPie1
+      var piedata1 = [
+          { label: "Conectado (20)", data: [[1,83.3]], color: '#66bb6a'},
+          { label: "Desconectado (4)", data: [[1,16.7]], color: '#ef5350'}
+      ];
+
+      $.plot('#flotPie1', piedata1, {
+          series: {
+              pie: {
+                  show: true,
+                  radius: 1,
+                  innerRadius: 0.65,
+                  label: {
+                      show: true,
+                      radius: 2/3,
+                      threshold: 1
+                  },
+                  stroke: {
+                      width: 0
+                  }
+              }
+          },
+          grid: {
+              hoverable: true,
+              clickable: true
+          }
+      });
+
+    });
+
+    var vid1Check = document.getElementById('vid1');
+    var vid2Check = document.getElementById('vid2');
+    var vid3Check = document.getElementById('vid3');
+
+    function checkAllVideo(elemento){
+      if(elemento.checked){
+        vid1Check.checked = true;
+        vid2Check.checked = true;
+        vid3Check.checked = true;
+      }else{
+        vid1Check.checked = false;
+        vid2Check.checked = false;
+        vid3Check.checked = false;
+      }
+    }
+
+    var cmdField = document.getElementById('cmdField');
+    var consola = document.getElementById('consolaCmd');
+
+    function addCommand(){
+      consola.innerHTML += "root@ALPMTRX01:# " + cmdField.value + "\n";
+      cmdField.value = "";
+      var pre = jQuery("#consolaCmd");
+      pre.scrollTop( pre.prop("scrollHeight") );
+    }
+
+    function clearConsole(){
+      consola.innerHTML = "";
+    }
+
+  </script>
+
+
+</body>
+</html>

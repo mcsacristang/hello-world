@@ -1,0 +1,21 @@
+{
+  "name": "nextonia-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Camilo Rojas",
+  "license": "ISC",
+  "dependencies": {
+    "applicationinsights": "^1.4.2",
+    "cookie-session": "^1.3.3",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.1",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-outlook": "^2.2.0"
+  }
+}
