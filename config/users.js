@@ -17,6 +17,11 @@ module.exports = {
       id: 'dfa13810-2ca4-4656-8aa0-4d00f3a481b9@14d31c98-bde2-47a7-ad68-fde3bbca11e1',
       username: 'Oscar Martin',
       email: 'oscar.martin@nextonia.com.co'
+    },
+    {
+      id: 'dfa13810-2ca4-4656-8aa0-4d00f3a481b9@14d31c98-bde2-47a7-ad68-fde3bbca11e1',
+      username: 'Alejandro Abdel',
+      email: 'alejandro.abdel@nextonia.com.co'
     }
   ]
 };
