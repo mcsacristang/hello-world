@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth-routes');
 const cameraRoutes = require('./routes/camera-routes');
 const dashboardRoutes = require('./routes/dashboard-routes');
@@ -6,6 +7,7 @@ const matrixRoutes = require('./routes/matrix-routes');
 const videoRoutes = require('./routes/video-routes');
 const soniaRoutes = require('./routes/sonia-routes');
 const passportSetup = require('./config/passport-setup');
+//const data = require('./db/mongo');
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const passport = require('passport');

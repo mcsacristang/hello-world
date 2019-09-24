@@ -14,5 +14,10 @@ module.exports = {
   }, 
   insight: {
     key: '10657acd-6a24-4ed6-9bd1-b647eeacef87'
+  },
+  cosmodb: {
+    host: 'mongodb://nextoniadb.documents.azure.com:10255/dashboardDB',
+    user: 'nextoniadb',
+    psk: 'YX83Y5XILIDeNXvowaSEBDop4vZ0nzK8uC2PcnBvFlrODzOHkDtf3CgBW4PKtUFUDTWSDNiUOGUZdRSOeHhJPQ=='
   }
 };
