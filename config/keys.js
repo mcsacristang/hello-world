@@ -10,7 +10,7 @@ module.exports = {
     clientSecret: 'wHc4Dq6uyJmYjr5V2E[VHWL/WBKOiq@]'
   },
   session: {
-    cookieKey: 'xxxxxxxxxxxx'
+    cookieKey: 'N3Xt0n1A'
   }, 
   insight: {
     key: '10657acd-6a24-4ed6-9bd1-b647eeacef87'

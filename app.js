@@ -7,7 +7,6 @@ const matrixRoutes = require('./routes/matrix-routes');
 const videoRoutes = require('./routes/video-routes');
 const soniaRoutes = require('./routes/sonia-routes');
 const passportSetup = require('./config/passport-setup');
-//const data = require('./db/mongo');
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const passport = require('passport');
@@ -15,6 +14,15 @@ const port = process.env.PORT || 3001;
 const appInsights = require("applicationinsights");
 
 const app = express();
+
+mongoose.connect(keys.cosmodb.host+"?ssl=true&replicaSet=globaldb", {
+  auth: {
+  user: keys.cosmodb.user,
+  password: keys.cosmodb.psk
+  }
+})
+.then(() => {console.log('Connection to CosmosDB successful');})
+.catch((err) => console.error(err));
 
 appInsights.setup(keys.insight.key);
 appInsights.start();

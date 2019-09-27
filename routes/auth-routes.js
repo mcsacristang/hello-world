@@ -23,7 +23,8 @@ router.get('/outlook', passport.authenticate('windowslive', {
     'openid',
     'profile',
     'offline_access',
-    'https://outlook.office.com/Mail.Read']
+    'https://outlook.office.com/Mail.Read'
+    ]
 }));
 
 router.get('/outlook/redirect', passport.authenticate('windowslive', { failureRedirect: '/error' }), (req, res) => {

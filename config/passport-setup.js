@@ -1,18 +1,19 @@
 const passport = require('passport');
+const mongoose = require('mongoose');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const OutlookStrategy = require('passport-outlook').Strategy;
 const keys = require('./keys');
 const users = require('./users');
+const User = require('../db/model');
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
 passport.deserializeUser((id, done) => {
-  let currentUser = users.users.find(dbUser => dbUser.id === id);
-  if(currentUser){
-    done(null, currentUser);
-  }
+  User.findById(id).then((user) =>{
+    done(null, user);
+  });
 });
 
 //Google strategy
@@ -24,14 +25,14 @@ passport.use(
     clientSecret: keys.google.clientSecret
   }, (accessToken, refreshToken, profile, done) => {
     let email = profile.emails[0].value;
-    let currentUser = users.users.find(dbUser => dbUser.email === email);
-    console.log(email);
-
-    if(currentUser){
-      done(null, currentUser);
-    }else{
-      done(null, false);
-    }
+    User.findOne({'email': email}).then((currentUser) => {
+      if(currentUser){
+        done(null, currentUser);
+        console.log(currentUser);
+      }else {
+        done(null, false);
+      }
+    })
   })
 );
 
@@ -43,14 +44,14 @@ passport.use(
     clientID: keys.outlook.clientID,
     clientSecret: keys.outlook.clientSecret
   }, (accessToken, refreshToken, profile, done) => {
-    let email = profile.emails[0].value;
-    let currentUser = users.users.find(dbUser => dbUser.email === email);
-    console.log(email);
-
-    if(currentUser){
-      done(null, currentUser);
-    }else{
-      done(null, false);
-    }
+    let email = profile.emails[0].value;    
+    User.findOne({'email' : email}).then((currentUser) => {
+      if(currentUser){
+        done(null, currentUser);
+        console.log(currentUser);
+      }else {
+        done(null, false);
+      }
+    })
   })
 );
