@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const OutlookStrategy = require('passport-outlook').Strategy;
 const keys = require('./keys');
-const users = require('./users');
 const User = require('../db/model');
 
 passport.serializeUser((user, done) => {
