@@ -30,7 +30,7 @@ appInsights.start();
 app.set('view engine','ejs');
 
 app.use(cookieSession({
-  maxAge: 24 * 60 * 60 * 1000,
+  maxAge: 1 * 10 * 60 * 1000,
   keys: [keys.session.cookieKey]
 }));
 
