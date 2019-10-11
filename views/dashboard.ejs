@@ -206,6 +206,9 @@
                 <!-- /.orders -->
             </div>
             <!-- .animated -->
+            <p>
+                <iframe width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=3fd5f5e7-a1bf-48ff-8b1c-62ff1c555a9f&autoAuth=true&ctid=14d31c98-bde2-47a7-ad68-fde3bbca11e1&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXNvdXRoLWNlbnRyYWwtdXMtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQifQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+            </p>
         </div>
         <!-- /.content -->
         <div class="clearfix"></div>
@@ -228,6 +231,7 @@
     <!-- /#right-panel -->
 
     <!-- Scripts -->
+    <script src="/bower_components/powerbi-client/dist/powerbi.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
@@ -253,6 +257,21 @@
     <script src="js/init/fullcalendar-init.js"></script>
 
     <!--Local Stuff-->
+
+    <!-- <script>
+        var embedConfiguration = {
+                accessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImFQY3R3X29kdlJPb0VOZzNWb09sSWgydGlFcyIsImtpZCI6ImFQY3R3X29kdlJPb0VOZzNWb09sSWgydGlFcyJ9.eyJhdWQiOiJodHRwczovL2FuYWx5c2lzLndpbmRvd3MubmV0L3Bvd2VyYmkvYXBpIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvODM4MmJhYWItYWVjYy00ZmU0LTk0MTMtZDYxYjVlODBkMTk0LyIsImlhdCI6MTU3MDc0MTMxNiwibmJmIjoxNTcwNzQxMzE2LCJleHAiOjE1NzA3NDUyMTYsImFpbyI6IjQyVmdZT2p3Q0RhOGxaSGRlN1JiN2hpLythVnBBQT09IiwiYXBwaWQiOiI4OWZhNmFmZi05MTY0LTQ1NDctYTc0Yy05MGUyZjZhZTQ2ZjAiLCJhcHBpZGFjciI6IjEiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC84MzgyYmFhYi1hZWNjLTRmZTQtOTQxMy1kNjFiNWU4MGQxOTQvIiwidGlkIjoiODM4MmJhYWItYWVjYy00ZmU0LTk0MTMtZDYxYjVlODBkMTk0IiwidXRpIjoiekVrVHFEYU95RXVuRlA2dmpad3BBQSIsInZlciI6IjEuMCJ9.K6m01oMpVH6SC85i8Pau_Dbj0mc5mcvTcJefXbw2BJBrcwEPkIwXi1bryExUN0Z0rDi7QtGXVqAqwH3zDYvPtFeAZ02mP9f1ZOgnNbzNQ6JPHvMjYBB7LH198mpmrCZl5muiwCKngrUHgJQq42fSJJ8xwsA1nFganNHNpL1mh4bsp9FOzzghSQFNEGvJ7lrgTNFACh5FlljlMvXesGgCPEOQt2C1sKI1PGar8KpcPodb5l7GhtISkRkTEIi0OQlje3oQdWFLlVwNWHZFkqVpiL1HaVda6vLaZK3Jxw5Lki2DUWkSq2JAMj3CvkjtrMxJnsNZ7y3jpOdrzmjAo77C-A',
+                embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed',
+                reportId: 'ae81de3f-2ee7-49c9-9807-e0e4222e54ac',
+            };
+            
+        // Grab the reference to the div HTML element that will host the report
+        var reportContainer = $('#reportContainer')[0];
+        
+        // Embed report
+        var report = powerbi.embed(reportContainer, embedConfiguration);
+    </script> -->
+
     <script>
         jQuery(document).ready(function($) {
             "use strict";

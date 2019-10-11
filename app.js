@@ -12,6 +12,8 @@ const keys = require('./config/keys');
 const passport = require('passport');
 const port = process.env.PORT || 3001;
 const appInsights = require("applicationinsights");
+const authentication = require("./config/authentication");
+const utils = require('./config/utils');
 
 const app = express();
 
@@ -57,3 +59,64 @@ app.get('/error', (req, res) => {
 app.listen(port, () => {
   console.log('App listening on port 3001.');
 });
+
+//EmbedReport
+
+/*async function getC(){
+  tokenResponse = await authentication.getAuthenticationToken();
+  if(('' + tokenResponse).indexOf('Error') > -1){
+    console.log('' + tokenResponse);
+  }
+  return console.log('Milu ' + tokenResponse.accessToken + ' Milo');
+}
+
+getC();*/
+
+/*async function generateEmbedToken(){
+
+  // get aad token to use for sending api requests
+  tokenResponse = await authentication.getAuthenticationToken();
+  if(('' + tokenResponse).indexOf('Error') > -1){
+      console.log('' + tokenResponse);
+      return;
+  }
+  console.log('Milu ' + tokenResponse.accessToken + ' Milo');
+  
+  var token = tokenResponse.accessToken;
+  var authHeader = utils.getAuthHeader(token);
+
+  // get report id to use in GenerateEmbedToken requestd
+  var reportId;
+  if(!keys.pib.reportId){
+      console.log("Getting default report from workspace for generating embed token...")
+
+      var reportParams = utils.createGetReportRequestParams(token)
+      reportResp = await utils.sendGetReportRequestAsync(reportParams.url, reportParams.options);
+      if(!reportResp) {
+          return;
+      }
+      reportId = reportResp.id
+  } else{
+      reportId = keys.pib.reportId;
+  } 
+
+  var headers = {
+      'Authorization': authHeader,
+      'Content-Type': 'application/json',        
+  };
+
+  var options = {
+          headers: headers,
+          method: 'POST',
+          body: JSON.stringify({"accessLevel": "View"})
+  };
+
+  var url = keys.pib.apiUrl + 'v1.0/myorg/groups/' + keys.pib.workspaceId + '/reports/' + reportId + '/GenerateToken';
+
+  // generate powerbi embed token to use for embed report.
+  // the returned token will be printed to console.
+  token = await utils.sendGenerateEmbedTokenRequestAsync(url, options);
+  //return console.log('Milu ' + token + ' Milo');
+}
+
+generateEmbedToken();*/
