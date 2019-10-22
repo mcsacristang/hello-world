@@ -116,8 +116,8 @@ async function sendGenerateEmbedTokenRequestAsync(url, options){
                 try{
                     generateEmbedTokenRes = JSON.parse(body)
                     if(keys.pib.reportId){
-                        console.log('Token Generated: ' + generateEmbedTokenRes.token);
-                        resolve(generateEmbedTokenRes.token);
+                        console.log('Token Generated: ' + body);
+                        resolve(generateEmbedTokenRes);
                     } else{
                         console.log('Token Generated: ' + generateEmbedTokenRes.token);
                         resolve(generateEmbedTokenRes.token);

@@ -18,8 +18,8 @@ passport.deserializeUser((id, done) => {
 //Google strategy
 passport.use(
   new GoogleStrategy({
-    callbackURL: 'https://sensin.azurewebsites.net/auth/google/redirect',
-    //callbackURL: '/auth/google/redirect',
+    //callbackURL: 'https://sensin.azurewebsites.net/auth/google/redirect',
+    callbackURL: '/auth/google/redirect',
     clientID: keys.google.clientID,
     clientSecret: keys.google.clientSecret
   }, (accessToken, refreshToken, profile, done) => {
@@ -38,8 +38,8 @@ passport.use(
 //Outlook strategy
 passport.use(
   new OutlookStrategy({
-    callbackURL: 'https://sensin.azurewebsites.net/auth/outlook/redirect',
-    //callbackURL: '/auth/outlook/redirect',
+    //callbackURL: 'https://sensin.azurewebsites.net/auth/outlook/redirect',
+    callbackURL: '/auth/outlook/redirect',
     clientID: keys.outlook.clientID,
     clientSecret: keys.outlook.clientSecret
   }, (accessToken, refreshToken, profile, done) => {

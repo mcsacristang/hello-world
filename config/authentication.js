@@ -24,15 +24,15 @@ async function getAuthenticationToken() {
     var keys = require('./keys');
 
     var authorityUrl = keys.pib.authorityHostUrl + '/' + keys.pib.tenant;
-    var authorityUrl1 = 'https://login.microsoftonline.com/common/';
+    var authorityUrl1 = 'https://login.windows.net/common/oauth2/authorize/';
     var resource = 'https://analysis.windows.net/powerbi/api';
 
-    var context = new AuthenticationContext(authorityUrl);
+    var context = new AuthenticationContext(authorityUrl1);
 
     // use user credentials and appId to get an aad token
     let promise = () => { return new Promise(
         (resolve, reject) => {
-            context.acquireTokenWithUsernamePassword(resource, keys.pib.user, keys.pib.psk, keys.pib.client, function(err, tokenResponse) {
+            context.acquireTokenWithUsernamePassword(keys.pib.resourceUrl, keys.pib.user, keys.pib.psk, keys.pib.client, function(err, tokenResponse) {
                 if (err) reject(err);
                 console.log(err);
                 resolve(tokenResponse);

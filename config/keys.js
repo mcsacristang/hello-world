@@ -25,8 +25,8 @@ module.exports = {
     psk: 'Pbi1.9N3xt0n&A',
     /*user: 'alejandro.abdel@nextonia.com.co',
     psk: 'G4l4g3r76',*/
-    workspaceId: '1183a77a-c48c-4bf3-b98c-9d8d3b8ee61a',
-    reportId: 'ae81de3f-2ee7-49c9-9807-e0e4222e54ac',
+    workspaceId: '689e95d6-f8ee-4253-a4ff-28183b8f5eff',
+    reportId: '3fd5f5e7-a1bf-48ff-8b1c-62ff1c555a9f',
     tenant: 'nextoniadmhotmailcom.onmicrosoft.com',
     /*client: 'e263ee8f-ab53-4981-8a34-8ed11048b6b7',
     secret: 'YnOt?-p:3YZ8u0F?YXE2Z[fR--Bzf[x9',*/
@@ -36,10 +36,10 @@ module.exports = {
     //TestPbi
     //client: '57a847ab-7f65-42c6-a171-dca39f68d445',
     //PibDeploy
-    client: '570e0724-e540-4462-b51c-9729beb55ba8',
-    authorityHostUrl : "https://login.windows.net",
-    resourceUrl : "https://analysis.windows.net/powerbi/api",
-    apiUrl : "https://api.powerbi.com/",
+    client: '57a847ab-7f65-42c6-a171-dca39f68d445',
+    authorityHostUrl : 'https://login.windows.net',
+    resourceUrl : 'https://analysis.windows.net/powerbi/api',
+    apiUrl : 'https://api.powerbi.com/',
     embedUrlBase: 'https://app.powerbi.com/'
   }
 };

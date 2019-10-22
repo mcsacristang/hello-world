@@ -261,37 +261,20 @@
     <!--Local Stuff-->
 
     <script>
-    $(document).ready(function () {
-        var getEmbedToken = "https://pbifcn.azurewebsites.net/api/getEmbedToken?code=lq8ftrGEMLtKwT4XRrjrRWbrd1LFrokCivbGGk7y5JSqERpYBuAMqw==";
-
-        $.ajax({
-            url: getEmbedToken,
-            jsonpCallback: 'callback',
-            contentType: 'application/javascript',
-            dataType: "jsonp",
-            success: function (json) {
 
                 var models = window['powerbi-client'].models;
 
                 var embedConfiguration = {
                     type: 'report',
-                    id: json.ReportId,
-                    embedUrl: json.EmbedUrl,
+                    id: "<%= reportId %>",
+                    embedUrl: "<%= url %>",
                     tokenType: models.TokenType.Embed,
-                    accessToken: json.EmbedToken
+                    accessToken: "<%= embedToken %>"
                 };
 
                 var $reportContainer = $('#reportContainer');
                 var report = powerbi.embed($reportContainer.get(0), embedConfiguration);
 
-
-                },
-                error: function () {
-                    alert("Error");
-                }
-            });
-
-        });
     </script>
 
     <script>

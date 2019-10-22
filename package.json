@@ -21,6 +21,6 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-outlook": "^2.2.0",
     "powerbi-api": "^1.2.3",
-    "powerbi-client": "^2.10.1"
+    "powerbi-client": "^2.10.2"
   }
 }
