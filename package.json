@@ -6,20 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Camilo Rojas",
+  "author": "Maria Camila Sacristan Gutierrez",
   "license": "ISC",
   "dependencies": {
     "@microsoft/microsoft-graph-client": "^2.0.0",
     "adal-node": "^0.2.1",
-    "applicationinsights": "^1.4.2",
+    "applicationinsights": "^1.5.0",
     "cookie-session": "^1.3.3",
+    "cryptiles": "^4.1.3",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
-    "mongodb": "^3.3.2",
+    "hoek": "^6.1.3",
+    "mongodb": "^3.3.3",
     "mongoose": "^5.7.5",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0",
-    "passport-outlook": "^2.2.0",
+    "passport-outlook": "^2.2.1",
     "powerbi-api": "^1.2.3",
     "powerbi-client": "^2.10.2"
   }
